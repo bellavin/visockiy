@@ -1,0 +1,22 @@
+-
+  var images = [
+    './img/content/story-slider-second-img.jpg',
+    './img/content/story-slider-second-img.jpg',
+    './img/content/story-slider-second-img.jpg',
+    './img/content/story-slider-second-img.jpg',
+    './img/content/story-slider-second-img.jpg',
+  ]
+
++b.SECTION.story-slider-second.container
+  +e.pre-wrapper
+    +e.wrapper
+      +e.post-wrapper
+        for i in images
+            +e.IMG(src=i).image
+  +e.UL.dots
+    for i in images
+      +e.LI.dot(style={'background-image': 'url("' + i + '")'})
+  +e.BUTTON.prev(type="button")
+    +svg("#button_l", 19, 30)
+  +e.BUTTON.next(type="button")
+    +svg("#button_r", 19, 30)

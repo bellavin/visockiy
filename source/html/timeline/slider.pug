@@ -1,0 +1,41 @@
+-
+  const sliderData = [
+    {
+      title: "Январь — Февраль",
+      txt: "Гастроли по Сибири"
+    },
+    {
+      title: "Начало мая",
+      txt: "Попытка самоубийства. Пребывание в наркологической клинике."
+    },
+    {
+      title: "Май, Июль — Август",
+      txt: "Снимается в Айзкрауле (Латвийская ССР) в фильме Ф. Филиппова«На завтрашней улице» (бригадир строителей Петр Маркин)."
+    },
+    {
+      title: "8 августа ",
+      txt: "У Высоцкого и Абрамовой родился второй ребенок – сын Никита."
+    },
+  ]
+
+mixin slide(title, txt)
+  +e.LI.item.swiper-slide
+    +e.H4.title
+      block
+      |#{title}
+    +e.P.text #{txt}
+
++b.timeline-slider.swiper-container
+  +e.UL.list.swiper-wrapper
+    +slide(sliderData[0].title, sliderData[0].txt)
+    +slide(sliderData[1].title, sliderData[1].txt)
+      +e.BUTTON.modal-opener.btn-reset(type="button" data-timeline-modal-opener="1")
+        +svg("#photo-camera", 16, 14)
+    +slide(sliderData[2].title, sliderData[2].txt)
+    +slide(sliderData[3].title, sliderData[3].txt)
+      +e.BUTTON.modal-opener.btn-reset(type="button" data-timeline-modal-opener="2")
+        +svg("#photo-camera", 16, 14)
+  +e.navigation
+    +e.arrow--prev.swiper-button-prev
+    +e.pagination
+    +e.arrow--next.swiper-button-next

@@ -1,0 +1,313 @@
+.header {
+  max-width: 1244px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-bottom: 11px;
+  border-bottom: 1px solid;
+
+  @include viewport--md {
+    border-bottom: 0;
+  }
+
+  @include viewport--lg {
+    padding-bottom: 0;
+  }
+
+
+  &__overlay {
+    display: none;
+  }
+
+  &--open &__overlay {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $bg-black;
+    z-index: 2;
+
+    @include viewport--md {
+      display: none;
+    }
+  }
+
+
+  &__top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 10px;
+
+    @include viewport--md {
+      padding-top: 0;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+    }
+  }
+
+
+  &__nav {
+    position: relative;
+    z-index: 2;
+    display: none;
+    flex-basis: 100%;
+    padding-top: 11px;
+    padding-bottom: 10px;
+
+    @include viewport--md {
+      display: block;
+      flex-basis: initial;
+      order: -1;
+    }
+
+    @include viewport--lg {
+      padding: 28px 0;
+    }
+  }
+
+  &__nav--top {
+    @include viewport--lg {
+      padding: 11px 20px 10px 0;
+    }
+  }
+
+  &--open &__nav {
+    display: block;
+  }
+
+  &__nav-list {
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+    border-top: 1px solid;
+
+    @include viewport--md {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-top: 0;
+    }
+  }
+
+  &__nav-item {
+    margin-top: 18px;
+
+    @include viewport--md {
+      margin-top: 0;
+    }
+  }
+
+  &__nav--top &__nav-item {
+    @include viewport--md {
+      margin-right: 20px;
+    }
+
+    @include viewport--lg {
+      margin-right: 46px;
+    }
+  }
+
+  &__nav-link {
+    display: block;
+
+    @include viewport--md {
+      font-size: 12px;
+    }
+
+    @include viewport--lg {
+      font-size: 17px;
+    }
+
+    @include viewport--xl {
+      font-size: 20px;
+    }
+  }
+
+  &__nav-btn {
+    display: block;
+    color: inherit;
+    text-decoration: underline;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $font-color-gold;
+    }
+  }
+
+  &__nav--top &__nav-link,
+  &__nav--top &__nav-btn {
+    @include viewport--md {
+      font-size: 14px;
+    }
+
+    @include viewport--lg {
+      font-size: 17px;
+    }
+
+    @include viewport--xl {
+      font-size: 20px;
+    }
+  }
+
+  &__social {
+    flex-basis: 50%;
+
+    @include viewport--md {
+      flex-basis: initial;
+      flex-shrink: 0;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  &__social-item {
+    margin-right: 9px;
+
+    @include viewport--md {
+      margin-right: 11px;
+    }
+
+    @include viewport--lg {
+      margin-right: 17px;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    color: $font-color-white;
+    overflow: hidden;
+
+    svg {
+      display: block;
+      fill: currentColor;
+    }
+
+    &:hover,
+    &:focus {
+      color: $font-color-gold;
+    }
+
+    @include viewport--md {
+      svg {
+        width: 17.7px;
+        height: 17.7px;
+      }
+    }
+
+    @include viewport--lg {
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    flex-basis: 32%;
+    padding-top: 7px;
+    flex-shrink: 0;
+    transition: opacity $transition-settings;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.9;
+    }
+
+    @include viewport--md {
+      order: -1;
+      flex-basis: initial;
+      margin-right: auto;
+      padding-top: 11px;
+      padding-right: 20px;
+    }
+
+    @include viewport--lg {
+      padding-top: 25px;
+    }
+  }
+
+  &__logo svg {
+    width: 40px;
+    height: 42px;
+
+    @include viewport--md {
+      width: 45px;
+      height: 47px;
+    }
+
+    @include viewport--lg {
+      width: 90px;
+      height: 93px;
+    }
+  }
+
+  &__burger {
+    flex-basis: 18%;
+    display: flex;
+    justify-content: flex-end;
+
+    @include viewport--md {
+      display: none;
+    }
+  }
+
+  &__blind {
+    display: none;
+    overflow: hidden;
+    outline: none;
+
+    @include viewport--md {
+      display: flex;
+      flex-shrink: 0;
+      margin-left: 25px;
+      color: white;
+      transition: color $transition-settings;
+
+      svg {
+        display: block;
+        margin: auto 0;
+        width: 27px;
+        height: 18px;
+        fill: currentColor;
+      }
+
+      &:hover,
+      &:focus {
+        color: $font-color-gold;
+      }
+    }
+
+    @include viewport--lg {
+      margin-left: 32px;
+
+      svg {
+        width: 37.5px;
+        height: 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+doctype html
+html(lang="ru")
+  head
+    include ./base/head.pug
+    title Оглавление
+
+    style.
+      a {
+        color: white;
+      }
+
+  body
+    main
+      .container(style="padding-top: 50px; padding-bottom: 50px; background-color: #1B1A1A;")
+      h1 Список страниц
+      ol
+        li
+          a(href="typography.html") Базовая стилизация
+        li
+          a(href="components.html") Компоненты
+        li
+          a(href="main.html") Главная --- main.html
+        li
+          a(href="story.html") История музея --- story.html
+        li
+          a(href="timeline.html") Таймлайн --- timeline.html
+        li
+          a(href="maps.html") Карты --- maps.html

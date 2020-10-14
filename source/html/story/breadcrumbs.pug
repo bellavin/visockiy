@@ -1,0 +1,12 @@
+-
+  var links = [
+    {text: 'Главная', link: '#'},
+    {text: 'Информация о музее', link: '#'},
+    {text: 'История музея', link: '#'}
+  ]
+
++b.SECTION.breadcrumbs.container
+  +e.UL.list
+    for i in links
+      +e.LI.item
+        +e.A(href=i.link).link= i.text

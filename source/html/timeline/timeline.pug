@@ -1,0 +1,70 @@
+mixin tabs-item(txt, isActive)
+  +e.tabs-item
+    +e.tab(href="#" data-timeline-tab= txt class= isActive ? `timeline__tab timeline__tab--active` : `timeline__tab`) #{txt}
+
+
+mixin years-item(year)
+  +e.item--open(data-timeline-year= year)
+    +e.H3.title #{year}
+    block
+
+
+mixin item(title, bg_src)
+  +e.LI.item--open
+    +e.H3.title
+      +e.title-background(style="background-image: url(" + bg_src + ")")
+      +e.title-link #{title}
+      +e.BUTTON.opener.btn-reset
+        +svg("#mobile-opener", 15, 7)
+    +e.content
+      block
+
+
++b.timeline.container
+  +e.UL.list
+    +item("1938 - 1960", "img/content/timeline-page-toggle-bg1.jpg")
+    +item("1961 - 1970", "img/content/timeline-page-toggle-bg2.jpg")
+      +e.UL.tabs-list
+        +tabs-item("1956", true)
+        +tabs-item("1957")
+        +tabs-item("1958")
+        +tabs-item("1959")
+        +tabs-item("1960")
+        +tabs-item("1961")
+        +tabs-item("1962")
+        +tabs-item("1963")
+        +tabs-item("1964")
+        +tabs-item("1965")
+        +tabs-item("1966")
+        +tabs-item("1967")
+
+      +e.years
+        +b.timeline-years
+          +e.UL.list
+            +years-item(1956)
+              +e.content
+                +e.slider
+                  include ./slider
+                +e.BUTTON.widget-btn.btn-reset Написано 165 песен. Слушать
+                +e.widget-content
+                    iframe(frameborder="0" style="border:none;" width="100%" height="407" src="https://music.yandex.ru/iframe/#playlist/navirecmusic/1011") Слушайте
+            +years-item(1957)
+            +years-item(1958)
+            +years-item(1959)
+            +years-item(1960)
+            +years-item(1961)
+            +years-item(1962)
+            +years-item(1963)
+            +years-item(1964)
+              +e.content
+                +e.slider
+                  include ./slider
+                +e.BUTTON.widget-btn.btn-reset Написано 165 песен. Слушать
+                +e.widget-content
+                    iframe(frameborder="0" style="border:none;" width="100%" height="407" src="https://music.yandex.ru/iframe/#album/4984084") Слушайте
+
+            +years-item(1965)
+            +years-item(1966)
+            +years-item(1967)
+
+    +item("1971 - 1980", "img/content/timeline-page-toggle-bg3.jpg")

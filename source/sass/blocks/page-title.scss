@@ -1,0 +1,28 @@
+.page-title {
+  &__heading {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.09;
+    margin-top: 16px;
+    margin-bottom: 24px;
+
+    @include viewport--md {
+      font-size: 48px;
+    }
+
+    @include viewport--lg {
+      margin-top: 0;
+      font-size: 48px;
+    }
+  }
+
+  &--main {
+    @include viewport--md {
+      text-align: center;
+    }
+
+    @include viewport--lg {
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.burger {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 13px;
+
+  cursor: pointer;
+
+  &__inner {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+
+    display: block;
+    width: 24px;
+    height: 1px;
+    margin-top: -2px;
+
+    background-color: #ffffff;
+
+    transition: top 0.12s cubic-bezier(0.33333, 0.66667, 0.66667,1) 0.2s, transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition-delay: 0.13s;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+    transition-property: transform;
+  }
+
+  &__inner::after,
+  &__inner::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 1px;
+    background-color: #ffffff;
+    transition: transform 0.15s ease;
+  }
+
+  &__inner::before {
+    top: -6px;
+    transition: top 0.12s cubic-bezier(0.33333,0.66667,0.66667,1) 0.2s, transform 0.13s cubic-bezier(0.55,0.055,0.675,0.19);
+  }
+
+  &__inner::after {
+    top: -12px;
+    transition: top 0.2s cubic-bezier(0.33333,0.66667,0.66667,1) 0.2s, opacity 0.1s linear;
+  }
+
+  .header--open &__inner {
+    height: 2px;
+    transform: translate3d(0,-6px,0) rotate(-45deg);
+    transition-delay: 0.22s;
+    transition-timing-function: cubic-bezier(0.215,0.61,0.355,1);
+  }
+
+  .header--open &__inner::before,
+  .header--open &__inner::after {
+    height: 2px;
+    top: 0;
+  }
+
+  .header--open &__inner::after {
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333,0,0.66667,0.33333), opacity 0.1s linear 0.22s;
+  }
+
+  .header--open &__inner::before {
+    transform: rotate(-90deg);
+    transition: top 0.1s cubic-bezier(0.33333,0,0.66667,0.33333) 0.16s, transform 0.13s cubic-bezier(0.215,0.61,0.355,1) 0.25s;
+  }
+}

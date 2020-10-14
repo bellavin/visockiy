@@ -1,0 +1,103 @@
+mixin title(title)
+  +e.H3.title
+    +e(href="#").title-link #{title}
+    +e.BUTTON.opener.btn-reset(type="button")
+      +svg("#mobile-opener", 15, 7)
+
+mixin links-item(text)
+  +e.LI.links-item
+    +e(href="#").link #{text}
+
+mixin hours-item(text, id, alt)
+  +e.LI.hours-item
+    +e.hours-text #{text}
+    +e.hours-img
+      +svg(id, 45, 45)
+
++b.footer.container
+  +e(href="#").logo
+    +svg("#logo", 74, 77)
+  +e.inner
+    +e.SECTION.section--links
+      +title("Музей")
+      +e.content
+        +e.UL.list--links
+          +links-item("Информация о музее")
+          +links-item("Официальные документы")
+          +links-item("Правила посещения")
+          +links-item("Стоимость билетов")
+          +links-item("Театрально-концертный зал")
+          +links-item("Зал сменных экспозиций")
+          +links-item("Карта сайта")
+          +links-item("Положение о персональных данных")
+
+    +e.SECTION.section--feedback
+      +e.feedback
+        +title("Контакты")
+        +e.content
+          +e.contacts
+            p
+              +svg("#map", 11, 14.5)
+              |109240, г.&nbsp;Москва, улица&nbsp;Высоцкого, дом&nbsp;3
+            p
+              +svg("#phone", 11, 12)
+              a(href="tel:+74959157578") (495) 915-75-78
+              |
+              |
+              a(href="tel:+74959152979") 915-29-79
+              br
+
+              |Сувенирная лавка:
+              |
+              a(href="tel:+74959154558") (495) 915-45-58
+              br
+
+              |Театрально-концертный зал:
+              |
+              a(href="tel:+74959157199") (495) 915-71-99
+
+            p
+              +svg("#fax", 11, 11)
+              |(495) 915-45-33
+            p
+              +svg("#mail", 11, 11)
+              a(href="mailto:museumvv@mail.ru") museumvv@mail.ru
+
+      +e.social
+        +e.H3.title
+          +e(href="#").title-link Мы в социальных сетях
+        +e.UL.list--social
+          +e.LI.social-item
+            +e(href="#").social-link
+              +svg("#vk", 30, 30)
+          +e.LI.social-item
+            +e(href="#").social-link
+              +svg("#fb", 30, 30)
+          +e.LI.social-item
+            +e(href="#").social-link
+              +svg("#ok", 30, 30)
+          +e.LI.social-item
+            +e(href="#").social-link
+              +svg("#youtube", 30, 30)
+
+    +e.SECTION.section--hours
+      +title("Часы работы")
+      +e.content
+        +e.UL.list--hours
+          +hours-item("Пн", "#day1")
+          +hours-item("Вт", "#day2")
+          +hours-item("Ср", "#day2")
+          +hours-item("Чт", "#day3")
+          +hours-item("Пт", "#day2")
+          +hours-item("Сб", "#day2")
+          +hours-item("Вс", "#day2")
+        +e.more-link-wrapper
+          +e(href="#").more-link Подробнее
+
+    +e.minkult-logo
+      +e(href="#").minkult-logo-link
+        +svg("#minkult-logo", 130, 27)
+
+
++b.bottom.container
+  +e(href="#").link Условия использования материалов сайта

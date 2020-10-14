@@ -1,0 +1,48 @@
+mixin social-item(id)
+  +e.LI.social-item
+    +e(href="#").social-link
+      +svg(id, 15, 15)
+
+mixin nav-item(name)
+  +e.LI.nav-item
+    +e.nav-link(href="#") #{name}
+
+mixin nav-item-top(name)
+  +e.LI.nav-item
+    +e.nav-link(href="#") #{name}
+
++b.header.container
+  +e.overlay
+  +e.top
+    +e.logo(href="#")
+      +svg("#logo", 45, 47)
+
+    +e.social
+      +e.UL.social-list
+        +social-item("#vk")
+        +social-item("#fb")
+        +social-item("#ok")
+        +social-item("#youtube")
+
+    +e.BUTTON.blind.btn-reset(type="button")
+      +svg("#eye", 27, 18)
+
+    +b.burger.header__burger
+      +e.inner
+
+    +e.NAV.nav--top
+      +e.UL.nav-list
+        +nav-item-top("Шкала времени")
+        +nav-item-top("Экспозиция")
+        +e.LI.nav-item
+          +e.BUTTON.nav-btn.btn-reset(type="button") Купить билет
+
+  +e.NAV.nav
+    +e.UL.nav-list
+      +nav-item("История музея")
+      +nav-item("Новости")
+      +nav-item("Афиша")
+      +nav-item("Выставки")
+      +nav-item("СМИ")
+      +nav-item("Партнёры")
+      +nav-item("Контакты")

@@ -1,0 +1,124 @@
+.rooms-modal {
+
+  display: none;
+
+  &__overflow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &--open {
+    display: block;
+  }
+
+  &__window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // top: 0;
+    // transform: translateX(-50%);
+    z-index: 100;
+
+    width: 80%;
+    max-width: 715px;
+    padding: 20px;
+
+    background: #1B1A1A;
+    border: 0.2px solid #FFFFFF;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.4);
+
+    @include viewport--md {
+      padding: 30px;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    cursor: pointer;
+    transition: opacity $transition-settings;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.9;
+    }
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    @include viewport--md {
+      top: 8px;
+      right: 8px;
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+
+  &__title {
+    font-size: 16px;
+    margin: 0;
+
+    @include viewport--md {
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+
+    @include viewport--md {
+      font-size: 18px;
+    }
+  }
+
+  &__title + &__img,
+  &__title + &__text {
+    margin-top: 20px;
+  }
+
+  &__img + &__text,
+  &__text + &__img {
+    margin-top: 10px;
+  }
+
+  &__inner {
+    display: block;
+
+    @include viewport--md {
+      display: flex;
+    }
+  }
+
+  &__inner &__right,
+  &__inner &__left {
+    flex-basis: 50%;
+  }
+
+  &__inner &__right {
+    margin-top: 20px;
+    text-align: left;
+
+    @include viewport--md {
+      margin-top: 0;
+      margin-left: 20px;
+      text-align: right;
+    }
+  }
+}

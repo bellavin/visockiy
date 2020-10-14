@@ -1,0 +1,99 @@
+.timeline-years {
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: none;
+  }
+
+  &__item--open {
+    display: block;
+  }
+
+  &__title {
+    font-size: 18px;
+    margin: 0;
+
+    @include viewport--md {
+      padding: 5px;
+      font-size: 30px;
+      background-color: transparentize($bg-gray, 0.95);
+      text-align: center;
+    }
+
+    @include viewport--lg {
+      padding: 17px;
+    }
+  }
+
+  &__slider {
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    @include viewport--md {
+      background-color: transparentize($bg-gray, 0.95);
+      padding: 23px 68px 33px;
+    }
+
+    @include viewport--lg {
+      padding: 30px 42px 37px;
+    }
+  }
+
+  &__content {
+    @include viewport--md {
+      margin-top: 17px;
+    }
+  }
+
+  &__widget-btn {
+
+    padding-top: 13px;
+    padding-bottom: 2px;
+
+    display: block;
+    width: 100%;
+    color: $font-color-gold;
+    text-decoration: underline;
+    outline: none;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: center;
+
+    @include viewport--md {
+      margin-top: 16px;
+      background-color: transparentize($bg-gray, 0.95);
+      padding: 10px 0px;
+      font-size: 20px;
+    }
+
+    @include viewport--lg {
+      margin-top: 20px;
+      padding: 22px 0;
+    }
+  }
+
+  &__widget-content {
+    display: none;
+
+    &--open {
+      display: block;
+      margin-top: 24px;
+    }
+
+    @include viewport--lg {
+      margin-top: 21px;
+    }
+  }
+
+  &__widget-content iframe {
+    display: block;
+
+    @include viewport--md {
+      height: 658px;
+    }
+  }
+}

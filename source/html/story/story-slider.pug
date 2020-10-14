@@ -1,0 +1,27 @@
+-
+  var images = [
+    './img/content/story-slider-img.jpg',
+    './img/content/story-slider-img.jpg',
+    './img/content/story-slider-img.jpg',
+    './img/content/story-slider-img.jpg',
+    './img/content/story-slider-img.jpg',
+    './img/content/story-slider-img.jpg',
+  ]
+
++b.SECTION.story-slider.container
+  +e.H2.title.visually-hidden Галлерея
+  +e.BUTTON.btn--back(type="button")
+    +svg("#button_l", 19, 30)
+  +e.pre-wrapper
+    +e.wrapper
+      +e.post-wrapper
+        +e.UL.list
+          for i in images
+            +e.LI.item
+              +e.IMG(src=i).image
+  +e.BUTTON.btn--forward(type="button")
+    +svg("#button_r", 19, 30)
+  +e.pagination
+    for i in images
+      +e.SPAN.pagination-bullet
+

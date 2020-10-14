@@ -1,0 +1,250 @@
+.rooms-slider {
+
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  &__img {
+    position: relative;
+    padding-top: 39%;
+
+    @include viewport--md {
+      margin: 0 24px;
+    }
+
+    @media (min-width: 960px) {
+      margin: 0 30px;
+    }
+  }
+
+  &__img-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+
+      @include viewport--md {
+        // height: 310px;
+      }
+    }
+  }
+
+  &__pagination {
+    display: none;
+
+    @include viewport--md {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 17px;
+      margin-top: 8px;
+      padding-bottom: 2px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: white;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  .swiper-pagination-bullet ~ .swiper-pagination-bullet {
+    margin-left: 10px;
+  }
+
+  &__arrow {
+    display: none;
+
+    @include viewport--md {
+      position: absolute;
+      right: 0;
+      top: 50%;
+
+      display: block;
+      width: 17px;
+      height: 30px;
+      margin-top: 0;
+
+      color: inherit;
+      font-size: 12px;
+      font-weight: bold;
+
+      transform: translateY(-50%);
+      transition: opacity $transition-settings;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0.9;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &--next::after {
+      background-image: url(../img/svg/button_r.svg);
+    }
+
+    &--prev::after {
+      background-image: url(../img/svg/button_l.svg);
+    }
+
+    @media (min-width: 960px) {
+      width: 14px;
+      height: 32px;
+      font-size: 28px;
+    }
+  }
+
+  &__arrow--next {
+    right: 1px;
+  }
+  &__arrow--prev {
+    left: 1px;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 11px 10px;
+    margin-top: 17px;
+
+    @include viewport--md {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 14px 0 10px;
+      gap: initial;
+    }
+  }
+
+  &__link {
+    flex-basis: 50%;
+    display: block;
+    position: relative;
+    padding-left: 12px;
+    font-size: 12px;
+
+    &--hover {
+      color: $font-color-gold;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 6px;
+      height: 6px;
+
+      margin-left: 1px;
+      margin-top: -4px;
+      color: inherit;
+      border: 1px solid $color-black;
+      background-color: currentColor;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px currentColor;
+    }
+
+    @include viewport--md {
+      margin-top: 14px;
+      font-size: 18px;
+      padding-left: 16px;
+
+      &::before {
+        left: 1px;
+        top: 10px;
+      }
+    }
+  }
+
+  &__points {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    @include viewport--md {
+      display: block;
+    }
+  }
+
+  &__point {
+    position: absolute;
+    display: inline-block;
+    color: $color-white;
+    white-space: nowrap;
+    border-radius: 50%;
+    border: 1px solid;
+    cursor: pointer;
+    transition: color $transition-settings;
+
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      margin-top: -6px;
+      padding-left: 10px;
+      // color: $color-gold;
+      font-size: 12px;
+      font-weight: 300;
+
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &--hover,
+    &:hover,
+    &:focus {
+      color: $color-gold;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  &__point-inner {
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 1px;
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+}
+
+.swiper-container-initialized .swiper-wrapper {
+  @media (min-width: 960px) {
+    max-width: 0; // Костыль для swiper slider
+  }
+}

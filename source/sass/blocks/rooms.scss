@@ -1,0 +1,226 @@
+.rooms {
+  padding-top: 25px;
+  padding-bottom: 23px;
+
+  @include viewport--md {
+    padding-top: 35px;
+    padding-bottom: 23px;
+  }
+
+  @media (min-width: 960px) {
+    padding-top: 15px;
+    padding-bottom: 45px;
+  }
+
+  @media (min-width: 1240px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+    margin-top: 15px;
+  }
+
+  &__inner {
+    @media (min-width: 960px) {
+      display: flex;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1240px) {
+      max-width: initial;
+      padding-top: 60px;
+      padding-bottom: 30px;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    @include viewport--lg {
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: 960px) {
+      display: block;
+      flex-basis: 31%;
+    }
+
+    @media (min-width: 1240px) {
+      flex-basis: 41%;
+      margin-right: 2%;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+
+    @media (min-width: 960px) {
+      flex-basis: 69%;
+    }
+
+    @media (min-width: 1240px) {
+      flex-basis: 57%;
+    }
+  }
+
+  &__item {
+    @media (min-width: 960px) {
+      display: none;
+    }
+  }
+
+  &__item--open {
+    display: block;
+
+    @media (min-width: 960px) {
+      animation: itemOpen $modal-animation;
+    }
+  }
+
+  @keyframes itemOpen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 10px 22px;
+    min-height: 52px;
+    background-image: url(../img/content/main-page-toggle-bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $font-color-white;
+
+    @include viewport--md {
+      padding: 45px 52px;
+    }
+
+    @media (min-width: 960px) {
+      line-height: 1;
+      padding: 11px 0;
+      background-image: none !important;
+    }
+  }
+
+  &__title-link {
+    font-size: 14px;
+    font-weight: normal;
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+
+    @include viewport--md {
+      font-size: 36px;
+    }
+
+    @media (min-width: 960px) {
+      font-weight: bold;
+    }
+
+    @media (min-width: 1240px) {
+      font-size: 54px;
+    }
+  }
+
+  &__item--open &__title {
+    color: $font-color-gold;
+
+    @media (min-width: 960px) {
+      color: inherit;
+    }
+  }
+
+  &__opener {
+    display: flex;
+    margin: auto 0 auto auto;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    outline: none;
+    color: inherit;
+
+    svg {
+      fill: currentColor;
+      margin: auto;
+      width: 15px;
+      height: 7px;
+
+    }
+
+    @include viewport--md {
+      width: 40px;
+      height: 40px;
+
+      svg {
+        width: 37px;
+        height: 17px;
+      }
+    }
+
+    @media (min-width: 960px) {
+      display: none;
+    }
+  }
+
+  &__item--open &__opener {
+    transform: rotate(180deg);
+  }
+
+  &__content {
+    display: none;
+  }
+
+  &__item--open &__content {
+    display: block;
+    padding: 24px 0;
+
+    @include viewport--md {
+      padding: 36px 0;
+    }
+  }
+
+  &__item--open &__slider {
+    @media (min-width: 960px) {
+      flex-grow: 1;
+    }
+  }
+
+  &__numbers-list {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  &__slider + &__text{
+    margin-top: 20px;
+
+    @include viewport--md {
+      margin-top: 0;
+    }
+
+    @include viewport--md {
+      margin-top: 20px;
+    }
+  }
+
+  &__img img {
+    display: block;
+    width: 100%;
+  }
+
+  &__img + &__text {
+    margin-top: 20px;
+  }
+}

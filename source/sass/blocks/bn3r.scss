@@ -1,0 +1,24 @@
+.bn3r {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include viewport--lg {
+    padding-bottom: 30px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-height: 269px;
+    object-fit: cover;
+
+    @include viewport--md {
+      max-height: 357px;
+    }
+
+    @include viewport--lg {
+      max-height: 447px;
+      padding-top: 0;
+    }
+  }
+}

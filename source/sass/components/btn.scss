@@ -1,0 +1,24 @@
+.btn {
+  display: table;
+  font-size: 20px;
+  line-height: inherit;
+  padding: 8px 15px;
+  font-family: inherit;
+  color: $font-color-gold;
+
+  background: $color-transparent;
+  border: 1px solid $color-gold;
+  cursor: pointer;
+  transition: color $transition-settings, background-color $transition-settings;
+
+  &:hover,
+  &:focus {
+    color: $font-color-black;
+    background-color: transparentize($bg-gold, 0.5);
+    outline: none;
+  }
+
+  &:active {
+    background-color: transparentize($bg-gold, 0.25);
+  }
+}

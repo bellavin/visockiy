@@ -1,0 +1,36 @@
++b.rooms-nav
+  +e.UL.list
+    +e.LI.item--first
+      +e.floor 1
+      +e.wrapper
+        +e.link Фойе
+        +e.link Гардероб
+        +e.link Касса
+        +e.link Киоск
+    +e.LI.item--second
+      +e.floor(href="#rooms-container") 2
+      +e.wrapper
+        +e.link(href="#rooms-container" data-rooms-tab="1") Начало пути
+        +e.link(href="#rooms-container" data-rooms-tab="2") Гостинная
+        +e.link(href="#rooms-container" data-rooms-tab="3") Любовь и дружба
+        +e.link(href="#rooms-container" data-rooms-tab="4") Театр и кино
+        +e.link(href="#rooms-container" data-rooms-tab="5") Кинозал
+    +e.LI.item--third
+      +e.floor(href="#rooms-container") 3
+      +e.wrapper
+        +e.link(href="#rooms-container" data-rooms-tab="6") Песни и стихи
+        +e.link(href="#rooms-container" data-rooms-tab="7") Мемориальный Кабинет Владимира Высоцкого
+  +e.img(data-rooms-img="1")
+    include ../../img/svg/map1.svg
+  +e.img(data-rooms-img="2")
+    include ../../img/svg/map2.svg
+  +e.img(data-rooms-img="3")
+    include ../../img/svg/map3.svg
+  +e.img(data-rooms-img="4")
+    include ../../img/svg/map4.svg
+  +e.img(data-rooms-img="5")
+    include ../../img/svg/map5.svg
+  +e.img(data-rooms-img="6")
+    include ../../img/svg/map6.svg
+  +e.img(data-rooms-img="7")
+    include ../../img/svg/map7.svg

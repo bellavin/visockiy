@@ -1,0 +1,58 @@
+// Vendor
+//---------------------------------
+
+@import "vendor/normalize";
+@import "vendor/swiper";
+
+// Global
+//---------------------------------
+
+@import "variables";
+@import "mixins";
+@import "global/fonts";
+@import "global/typography";
+@import "global/reboot";
+@import "global/utils";
+@import "global/container";
+
+// Components
+//---------------------------------
+
+@import "components/btn";
+@import "components/burger";
+
+// Blocks
+//---------------------------------
+
+@import "blocks/header";
+@import "blocks/footer";
+
+@import "blocks/bn3r";
+@import "blocks/page-title";
+@import "blocks/about";
+@import "blocks/rooms";
+@import "blocks/rooms-slider";
+@import "blocks/rooms-nav";
+@import "blocks/rooms-modal";
+@import "blocks/rooms-svg-maps";
+
+@import "blocks/timeline";
+@import "blocks/timeline-years";
+@import "blocks/timeline-slider";
+@import "blocks/timeline-modal";
+
+@import "blocks/breadcrumbs";
+@import "blocks/story-title";
+@import "blocks/story-slider";
+@import "blocks/story-content";
+@import "blocks/story-slider-second";
+
+// ! use it to disable hover, focus on touch
+// but dont use if for inputs, textarea etc - all text fields
+
+/* @media (hover: hover), screen and (min-width: 0\0) {
+  &:hover,
+  &:focus {
+    color: red;
+  }
+} */

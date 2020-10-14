@@ -1,0 +1,35 @@
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Elektra Text Pro";
+
+  font-display: swap;
+  src:
+    url("../fonts/ElektraText.otf") format("opentype"),
+    url('../fonts/ElektraText.woff2') format('woff2'),
+    url('../fonts/ElektraText.woff') format('woff');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: bold;
+  font-family: "Elektra Text Pro";
+
+  font-display: swap;
+  src:
+    url("../fonts/ElektraTextBold.otf") format("opentype"),
+    url('../fonts/ElektraTextBold.woff2') format('woff2'),
+    url('../fonts/ElektraTextBold.woff') format('woff');
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: normal;
+  font-family: "Elektra Text Pro";
+
+  font-display: swap;
+  src:
+    url("../fonts/ElektraTextItalic.otf") format("opentype"),
+    url('../fonts/ElektraTextItalic.woff2') format('woff2'),
+    url('../fonts/ElektraTextItalic.woff') format('woff');
+}

@@ -1,0 +1,126 @@
+.rooms-nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    @media (min-width: 960px) {
+      display: block;
+    }
+
+    @media (min-width: 1240px) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__item ~ &__item {
+    @media (min-width: 960px) {
+      margin-top: 44px;
+    }
+    @media (min-width: 1240px) {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+  }
+
+  &__floor {
+    font-size: 90px;
+    line-height: 1;
+
+    &--active {
+      color: $font-color-gold;
+    }
+
+    @media (min-width: 1240px) {
+      font-size: 100px;
+    }
+  }
+
+  &__item--first &__floor {
+    width: 54px;
+    padding-left: 11px;
+
+    @media (min-width: 1240px) {
+      width: 43px;
+      padding-left: 0;
+    }
+  }
+
+  &__wrapper {
+    @media (min-width: 960px) {
+      margin-top: 6px;
+      max-width: 150px;
+      margin-left: 6px;
+    }
+
+    @media (min-width: 1240px) {
+      margin-top: 9px;
+    }
+  }
+
+  &__item--first &__link ~ &__link {
+    margin-top: 7px;
+
+    @media (min-width: 1240px) {
+      margin-top: 9px;
+    }
+  }
+
+  &__item--second &__link ~ &__link {
+    margin-top: 7px;
+
+    @media (min-width: 1240px) {
+      margin-top: 4px;
+    }
+  }
+
+  &__item--third &__link ~ &__link {
+    margin-top: 20px;
+
+    @media (min-width: 1240px) {
+      margin-top: 27px;
+    }
+  }
+
+  &__link {
+    @media (min-width: 960px) {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+
+      &--active {
+        color: $font-color-gold;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+  }
+
+  &__img--open {
+    @media (min-width: 1240px) {
+      display: block;
+      margin-top: 100px;
+      width: 100%;
+
+      svg {
+        width: 100%;
+        fill: $bg-black;
+      }
+    }
+  }
+
+  @keyframes itemOpen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

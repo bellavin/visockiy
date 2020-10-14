@@ -1,0 +1,174 @@
+.story-slider-second {
+  position: relative;
+  max-width: 1244px;
+  width: 69%;
+  display: block;
+  margin: 42px 0 42px 118px;
+  padding: 0;
+
+  &__pre-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+  }
+
+  &__post-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    white-space: nowrap;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    > svg {
+      fill: #ffffff;
+    }
+  }
+
+  &__image {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 47%;
+    padding: 0;
+
+    > svg {
+      width: 19px;
+      height: 30px;
+      opacity: 0.8;
+      transition: opacity $transition-settings;
+    }
+  }
+
+  &__prev {
+    left: -60px;
+  }
+
+  &__next {
+    right: -60px;
+  }
+
+  &__prev:hover > svg,
+  &__next:hover > svg {
+    opacity: 0.3;
+  }
+
+  &__dots {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0;
+    text-align: left;
+  }
+
+  &__dots > li {
+    position: relative;
+    background-size: cover;
+    width: 93px;
+    height: 68px;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.45;
+    transition: opacity $transition-settings;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .story-slider-second {
+    width: 59%;
+    margin: 36px auto 44px;
+
+    &__prev,
+    &__next {
+      top: 46%;
+      width: 16px;
+      height: 35px;
+
+      > svg {
+        width: 16px;
+        height: 35px;
+      }
+    }
+
+    &__prev {
+      left: -45px;
+    }
+
+    &__next {
+      right: -45px;
+    }
+
+    &__dots {
+      margin: 12px 0 37px;
+    }
+
+    &__dots > li {
+      width: 68px;
+      height: 51px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .story-slider-second {
+    min-width: 232px;
+    margin-top: 40px;
+    margin-bottom: 0;
+
+    &__prev,
+    &__next {
+      top: 45%;
+      width: 9px;
+      height: 15px;
+
+      > svg {
+        width: 9px;
+        height: 15px;
+      }
+    }
+
+    &__prev {
+      left: -25px;
+    }
+
+    &__next {
+      right: -25px;
+    }
+
+    &__prev:hover > svg,
+    &__next:hover > svg {
+      opacity: 0.8;
+    }
+
+    &__dots {
+      margin: 6px 0 23px;
+    }
+
+    &__dots > li {
+      width: 37px;
+      height: 28px;
+    }
+  }
+}

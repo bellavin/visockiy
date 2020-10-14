@@ -1,0 +1,27 @@
+include ./mixins/mixins.pug
+
+doctype html
+html(lang="ru")
+  head
+    include ./base/head.pug
+    title Главная
+
+  body
+    div(style="display: none;")
+      include ../img/svg/sprite_auto.svg
+    div(style="display: none;")
+      include ../img/svg/maps.svg
+
+    div.wrapper
+      header
+        include ./base/header.pug
+      main
+        include ./main/bn3r.pug
+        include ./main/page-title.pug
+        include ./main/about.pug
+        include ./main/rooms.pug
+      footer
+        include ./base/footer.pug
+
+    include ./main/rooms-modal.pug
+    include ./base/scripts.pug

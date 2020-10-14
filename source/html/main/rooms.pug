@@ -1,0 +1,127 @@
+-
+  const texts = [
+    "Погружение в атмосферу «эпохи Высоцкого» начинается с первого зала. Здесь представлены вещи и документы первых 22 лет жизни Владимира Семёновича: трогательные письма маленького Володи и ёлка с его ёлочными игрушками, хлебные карточки за 1947 год и патефон с пластинками, зачётная книжка и заявление на отчисление из института… Здесь же установлена уникальная «Шкала Времени», показывающая, на фоне каких мировых и личных событий создавалась каждая его песня и стихотворение, ставился спектакль или снимался фильм.",
+    "Пространство, воссоздающее гостиную комнату Владимира Высоцкого – ту самую, в которой отмечали новоселье в квартире на Малой Грузинской. Стенка, мебельный гарнитур, диван и кресло, телевизор «Рубин 714», ковер – всё стоит ровно так, как расставлял в свое время хозяин. На стенах и в шкафах – любимые книги Высоцкого, его аудиотехника, подарки и сувениры с дарственными надписями от друзей. Фотографии и аудиозаписи, сделанные в той самой гостиной, передают атмосферу гостеприимства и искренней сердечной дружбы, царившей в ней.",
+    "Зал посвящен личной жизни поэта: его друзьям по жизни и по работе, родным и близким, путешествиям по миру и его увлечениям. Здерсь воссоздан интерьер кухни квартиры на Малой Грузинской улице – главного места общения друзей Высоцкого, где по ночам велись разговоры и жаркие споры на самые разные темы. Голографическая проекция воспроизводит типичный сюжет из его жизни – звонок другу, чтобы показать новую песню. Точный макет с интерьерами той самой квартиры демонстрирует вкусы и стиль жизни Владимира Семёновича и Марины Влади, его третьей жены, открывшей «заграничную» главу в его жизни.",
+    "Зал рассказывает о профессиональной стороне жизни Высоцкого – всех его театральных выступлениях и киносъемках. Здесь представлены фото- и видеофрагменты легендарных спектаклей и фильмов, декорации к спектаклям и оригинальный театральный реквизит, съемочные и сценические костюмы и афиши.",
+    "Смерть Владимира Высоцкого 25 июля 1980 года стала потрясением не только для его близких, но и для всей страны. Экспозиционный комплекс «Прощание» демонстрирует кадры прощания с поэтом, посвящённые ему стихи и фотографии. В витрине представлена посмертная маска Владимира Семёновича Высоцкого. Здесь же размещен мини-кинотеатр с набором фильмов о В. Высоцком",
+    "В этом зале от «А» до «Я» раскрыта непростая судьба Высоцкого-автора. Первые самодельные рекордеры и грампластинки, катушечные магнитофоны всех видов, критические статьи, травля в прессе, проблемы в кино… письма от слушателей, афиши выступлений, первые пластинки Высоцкого, вышедшие при его жизни, и, конечно, любимые гитары Владимира Семёновича. В самых разнообразных интерактивных инсталляциях этого зала вы можете послушать песни Владимира Высоцкого в его исполнении.",
+    "Небольшая комната в 14 квадратных метров с большим окном вдоль стены и балконом, полностью воссоздающая обстановку кабинета Владимира Высоцкого, дополнит рассказ о личности Высоцкого – скромного и нетребовательного в быту творца. Это было место уединения, раздумий, творческого поиска. Здесь, как правило, по ночам, при свете настольной лампы шла кропотливая работа: рождались новые стихи, песни, писались сценарии. Мемориальный кабинет был открыт 25 июля 2008 года, в год 70-летия Владимира Семеновича Высоцкого. Обстановка кабинета воссоздана по фотосъёмкам и воспоминаниям его родных и близких из подлинных вещей поэта."
+  ]
+
+mixin item(data, title, text, floor, room, scr, bg_src)
+  +e.LI.item.rooms__item--open(data-rooms-item=data)
+    +e.H3.title(style="background-image: url(" + bg_src + ")")
+      +e.title-link #{title}
+      +e.BUTTON.opener.btn-reset(type="button")
+        +svg("#mobile-opener", 15, 7)
+    +e.content
+      block
+      +e.text #{text}
+
+mixin slider()
+  +b.rooms-slider.rooms__slider.swiper-container
+    +e.UL.list.swiper-wrapper
+      block
+
+    +e.arrow--next.swiper-button-next
+    +e.arrow--prev.swiper-button-prev
+
+    +e.pagination
+      .swiper-pagination
+
+
+
++b.SECTION.rooms.container(id="rooms-container")
+  h2.visually-hidden Выставочные залы
+  +e.inner
+    +e.nav
+      include ./rooms-nav.pug
+    +e.UL.list
+      +item("1", "Начало пути", texts[0], 2, 1, "img/content/room1.png", "img/content/main-page-toggle-bg1.png")
+        +slider
+          +e.LI.item.swiper-slide
+            +e.img
+              +e.img-inner.js-rooms-img-inner
+                +e(src="img/content/main-slider1.png")
+              +e.points
+                +e.point(style="left: 1%; top: 47%;" data-rooms-slider-point="1")
+                  +e.point-inner
+                +e.point(style="left: 34%; top: 61%;" data-rooms-slider-point="2")
+                  +e.point-inner
+                +e.point(style="left: 69%; top: 61%;" data-rooms-slider-point="3")
+                  +e.point-inner
+                +e.point(style="left: 46%;top: 39%;" data-rooms-slider-point="4")
+                  +e.point-inner
+
+            +e.links
+              +e.link(href="#" data-rooms-slider-link="1") Таймлайн
+              +e.link(href="#" data-rooms-slider-link="2") "Детские сны"
+              +e.link(href="#" data-rooms-slider-link="3") Родословное древо
+              +e.link(href="#" data-rooms-slider-link="4") "Длинная витрина"
+
+          +e.LI.item.swiper-slide
+            +e.img
+              +e.img-inner
+                +e(src="img/content/main-slider1.png" alt="Начало пути")
+              +e.points
+                +e.point(style="left: 14%; top: 26%;" data-rooms-slider-point="5")
+                  +e.point-inner
+                +e.point(style="left: 48%; top: 72%;" data-rooms-slider-point="6")
+                  +e.point-inner
+                +e.point(style="left: 58%; top: 37%;" data-rooms-slider-point="7")
+                  +e.point-inner
+                +e.point(style="left: 85%; top: 52%;" data-rooms-slider-point="8")
+                  +e.point-inner
+
+            +e.links
+              +e.link(href="#" data-rooms-slider-link="5") "Система коридорная"
+              +e.link(href="#" data-rooms-slider-link="6") "Сушилка"
+              +e.link(href="#" data-rooms-slider-link="7") Интерактивный стол
+              +e.link(href="#" data-rooms-slider-link="8") "Баллада о детстве"
+
+      +item("2", "Гостиная", texts[1], 2, 2, "img/content/room2.png", "img/content/main-page-toggle-bg2.png")
+        +slider
+          +e.LI.item.swiper-slide
+            +e.img
+              +e.img-inner
+                +e(src="img/content/main-slider1.png" alt="Гостиная")
+
+          +e.LI.item.swiper-slide
+            +e.img
+              +e.img-inner
+                +e(src="img/content/main-slider1.png" alt="Гостиная")
+
+      +item("3", "Любовь и дружба", texts[2], 2, 3, "img/content/room3.png", "img/content/main-page-toggle-bg3.png")
+        +slider
+          +e.LI.item.swiper-slide
+            +e.img
+              +e.img-inner
+                +e(src="img/content/photo_2020-06-22 14.55.58.jpeg" alt="Любовь и дружба")
+
+          +e.LI.item.swiper-slide
+            +e.img
+              +e.img-inner
+                +e(src="img/content/photo_2020-06-22 14.56.01.jpeg" alt="Любовь и дружба")
+
+      +item("4", "Театр и кино", texts[3], 2, 4, "img/content/room4.png", "img/content/main-page-toggle-bg4.png")
+        +slider
+          +e.LI.item.swiper-slide
+            +e.img
+              +e.img-inner
+                +e(src="img/content/photo_2020-06-22 14.56.04.jpeg" alt="Театр и кино")
+
+          +e.LI.item.swiper-slide
+            +e.img
+              +e.img-inner
+                +e(src="img/content/photo_2020-06-22 14.56.06.jpeg" alt="Театр и кино")
+
+      +item("5", "Кинозал", texts[4], 2, 5, "img/content/room5.png", "img/content/main-page-toggle-bg5.png")
+        +e.img
+          img(src="img/content/main-img3.png" alt="Кинозал")
+      +item("6", "Песни и стихи", texts[5], 3, 6, "img/content/room6.png", "img/content/main-page-toggle-bg6.png")
+        +e.img
+          img(src="img/content/main-img4.png" alt="Любовь и дружба")
+      +item("7", "Мемориальный кабинет Владимира Высоцкого", texts[6], 3, 7, "img/content/room7.png", "img/content/main-page-toggle-bg7.png")
+        +e.img
+          img(src="img/content/main-img5.png" alt="Мемориальный кабинет Владимира Высоцкого")

@@ -1,0 +1,108 @@
+.timeline-slider {
+  &__list {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 14px;
+
+    @include viewport--md {
+      font-size: 20px;
+    }
+  }
+
+  &__modal-opener {
+    width: 16px;
+    height: 14px;
+    margin-top: -2px;
+    margin-right: 5px;
+    vertical-align: middle;
+    outline: none;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $bg-gold;
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: $bg-white;
+      }
+    }
+
+    @include viewport--md {
+      width: 19px;
+      height: 17px;
+      margin-top: -4px;
+      margin-right: 5px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    margin: 0;
+
+    @include viewport--md {
+      margin-top: 17px;
+      font-size: 18px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include viewport--md {
+      margin-top: 116px;
+    }
+
+    @include viewport--lg {
+      margin-top: 47px;
+    }
+  }
+
+  &__pagination {
+    width: auto;
+    font-size: 11px;
+    margin: 0 9px;
+    line-height: 0.5;
+
+    @include viewport--md {
+      margin: 0 14px;
+      font-size: 18px;
+    }
+  }
+
+  &__arrow {
+    position: static;
+    width: initial;
+    height: initial;
+    margin-top: 0;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  &__arrow::after {
+    font-weight: bold;
+    font-size: 10px;
+
+    @include viewport--md {
+      font-size: 18px;
+    }
+  }
+}

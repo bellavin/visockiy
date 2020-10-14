@@ -1,0 +1,17 @@
+.rooms-svg-map {
+
+  [data-rooms-map] {
+    // stroke: red;
+    cursor: pointer;
+  }
+
+  g:hover rect:not(:first-child),
+  g:hover line {
+    stroke: $bg-gold;
+  }
+
+  g:hover circle,
+  g:hover path {
+    fill: $bg-gold;
+  }
+}

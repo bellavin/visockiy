@@ -1,0 +1,57 @@
+// Colors
+//---------------------------------
+
+// Default
+
+$color-default-black:           #000000;
+$color-default-white:           #ffffff;
+$color-transparent:             rgba(0, 0, 0, 0);
+
+// Base
+
+$color-black:                   #1B1A1A;
+$color-white:                   $color-default-white;
+$color-gold:                    #EDC92F;
+
+// Borders
+
+$border-color-gold:               $color-gold; //#00338a - use it for ctrl+f
+
+// Typography
+
+$font-family--elektra-text-pro:   "Elektra Text Pro", "Arial", sans-serif;
+
+$font-color-black:                $color-black; //#000000
+$font-color-white:                $color-default-white; //#ffffff
+$font-color-gold:                 $color-gold; //#00338a
+
+// Background
+
+$bg-black:                        $color-black; //#000000
+$bg-white:                        $color-white; //#f2f2f2
+$bg-gold:                         $color-gold; //#f2f2f2
+$bg-gray:                         #c4c4c4;
+
+// Gradient
+
+$black-to-right:                  linear-gradient(90deg, rgba(0, 10, 42, 0.75) 0%, rgba(0, 10, 42, 0) 76.64%);
+
+// Animation
+//---------------------------------
+
+$transition-settings:             0.3s ease;
+$modal-animation:                 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+// Viewports
+//---------------------------------
+
+$viewport--sm:                    320px;
+$viewport--md:                    768px;
+$viewport--lg:                    1024px;
+$viewport--xl:                    1440px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi:                      144dpi;
+$retina-dppx:                     1.5dppx;
